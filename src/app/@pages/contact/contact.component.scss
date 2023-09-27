@@ -1,0 +1,115 @@
+@import '../../../variables.scss';
+
+.Contact-Container{
+
+  font-family: 'Monserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+  // overflow-y: scroll;
+  // padding: 6rem;
+  // gap: 1rem;
+}
+
+.Input {
+  &.ng-pristine{
+    border: 1px solid gray !important;
+  }
+
+  &.ng-touched.ng-valid{
+    border: 1px solid $accentColor !important;
+  }
+
+  &.ng-touched.ng-invalid{
+    border: 1px solid rgb(158, 46, 46) !important;
+  }
+
+}
+
+
+.Contact_Form-Container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .Contact-Form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .Form_Title-Container{
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      font-size: 1.2rem;
+      color: aliceblue;
+    }
+
+    input.Input{
+      width: 100%;
+      height: 50px;
+      background-color: transparent;
+      border: 1px solid $textColor;
+      padding: 5px;
+      color: $textColor;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+
+      // &:focus{
+      //   color: aliceblue;
+      //   border-color: aliceblue !important;
+      //   border: 1px solid aliceblue !important;
+      // }
+
+    }
+
+    textarea.Input{
+      width: 100%;
+      height: 200px;
+      background-color: transparent;
+      border: 1px solid $textColor;
+      padding: 5px;
+      color: $textColor;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+
+      //  &:focus{
+      //   color: aliceblue;
+      //   border-color: aliceblue;
+      //   border: 1px solid aliceblue;
+      // }
+    }
+
+
+    .Send_Button-Container{
+      width: 100%;
+      height: 50px;
+      .Send_Button{
+        width: 100%;
+        height: 100%;
+        // background-color: $textColor;
+        background-color: transparent;
+        text-decoration: none;
+        border: none;
+        // outline-color: #;
+        color: $textColor;
+        border: 1px solid $textColor;
+        &:focus{
+          cursor: pointer;
+          // border: 1px solid aliceblue;
+          background-color: $textColor;
+          color: black;
+        }
+        &:disabled{
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}

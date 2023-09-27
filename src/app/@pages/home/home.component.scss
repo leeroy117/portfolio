@@ -1,0 +1,169 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,900;1,300&display=swap');
+@import '../../../styles.scss';
+@import '../../../variables.scss';
+
+.Home-Container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: aliceblue;
+  margin-left: auto;
+  // overflow-x: scroll;
+  overflow-y: scroll;
+  @include media-up(md){
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    height: calc(100% - 60px);
+  }
+
+}
+
+// .Image{
+//   clip-path: circle(50%);
+//   width: 100px;
+//   height: 100px;
+// }
+
+a{
+  &:nth-child(1){
+    color: $textColor;
+  }
+  &:nth-child(2){
+    color: #fff;
+  }
+
+}
+
+.Introduction-Container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include media-up(md){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.Image-Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  // height: auto;
+  // overflow: hidden;
+
+  .Image{
+    width: 400px;
+    height: 270px;
+    z-index: 1;
+    transition: filter 0.5s ease;
+    filter: grayscale(100);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  // .Image:hover{
+  //   filter: grayscale(0);
+  // }
+
+  @include media-up(md){
+    width: 500px;
+
+  }
+
+}
+
+.Biography-Container{
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 25px;
+  h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .Description-Title{
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    text-align: center;
+  }
+}
+
+.Job-Title{
+  display: block;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.Biography-Header{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Biography-Footer{
+  width: 100%;
+  .Social_Network-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10pxs;
+    a{
+      svg{
+        fill: $textColor;
+      }
+    }
+  }
+
+  .Social_Network-Item{
+    background: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: background .5s ease-in-out;
+  }
+
+  .Social_Network-Item:hover{
+    cursor: pointer;
+    background: #28CE20;
+  }
+
+
+
+}
+
+
+/************************************************************/
+.typing{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #28CE20;
+}
+
+.Typing-Machine{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  @include media-up(md){
+    font-size: 1.2rem;
+  }
+}
+/**********************************************************************/

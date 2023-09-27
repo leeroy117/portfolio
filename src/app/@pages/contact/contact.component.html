@@ -1,0 +1,45 @@
+<div class="Contact-Container">
+
+  <div class="Contact_Form-Container">
+    <form
+      [formGroup]="contactForm"
+      class="Contact-Form"
+      (ngSubmit)="onSubmit()"
+    >
+
+      <div class="Form_Title-Container">
+        <h1>{{ contact.title }}</h1>
+      </div>
+
+      <input
+        class="Input"
+        type="text"
+        placeholder="John Doe"
+        formControlName="name"
+      >
+
+
+      <input
+        class="Input"
+        type="text"
+        placeholder="example@gmail.com"
+        formControlName="email"
+        >
+
+      <textarea
+        class="Input"
+        formControlName="message"
+      ></textarea>
+
+      <div class="Send_Button-Container">
+        <button
+          class="Send_Button Outlined"
+          type="submit"
+          [disabled]="!contactForm.valid || !contactForm.dirty"
+        >{{ contact.buttonText }}</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

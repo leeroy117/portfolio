@@ -1,0 +1,76 @@
+{
+
+  "welcome": "Bienvenido a mi app",
+  "sidebar": {
+    "home": "Home",
+    "about": "About",
+    "service": "Service",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "home":{
+    "jobPosition": "Full Stack Web Developer",
+    "description": "I am a passionate",
+    "hobbies": [
+      "full stack web developer",
+      "photographer",
+      "student"
+    ]
+  },
+  "about":{
+    "position": "Full Stack Web Developer",
+    "skills":{
+      "programmingTitle": "Programming Skills",
+      "languagesTitle": "Language Skills"
+    },
+    "personalInformation":{
+      "birthday":{
+        "title": "Birthday",
+        "content": "04-11-1998"
+      },
+      "email":{
+        "title": "Email",
+        "content": "leeroy.uziel.gg@outlook.es"
+      },
+      "phone":{
+        "title": "Phone",
+        "content": "+52 871 251 07 48"
+      },
+      "nationality":{
+        "title": "Nationality",
+        "content": "Mexican"
+      },
+      "study":{
+        "title": "Degree",
+        "content": "Information Technology Engineering"
+      },
+      "freelance":{
+        "title": "Freelance",
+        "content": "Available"
+      }
+
+    },
+    "knowledgeAndInterests":{
+      "knowledge":{
+        "title": "Knowledge"
+      },
+      "interests": {
+        "title": "Interests",
+        "items": [
+          "Create Mobile App",
+          "Site Optimization",
+          "Learn design patterns",
+          "Personal improvement",
+          "Practice more frontend",
+          "Learn more programming languages",
+          "Build a personal blog",
+          "Teach people programming"
+        ]
+      }
+    }
+  },
+  "contact":{
+    "title": "Contact",
+    "buttonText": "Send message"
+  }
+}

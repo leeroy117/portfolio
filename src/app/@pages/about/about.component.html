@@ -1,0 +1,126 @@
+<div class="About-Container">
+  <div class="About-Header Padding">
+    <h1>Leeroy Uziel García González</h1>
+    <h3 class="Title">{{ positionTitle }}</h3>
+  </div>
+
+  <!-- <hr class="Divider"> -->
+
+  <div class="About-Information Padding">
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam explicabo enim id quis nesciunt quam libero
+      doloribus eligendi eveniet nobis distinctio suscipit, nam tenetur corporis illum, accusamus quasi molestiae
+      quisquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut illo rem totam non dignissimos asperiores
+      fugiat consequatur dolor placeat odio deleniti nihil saepe possimus reiciendis assumenda, similique quia architecto
+      iusto?
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam explicabo enim id quis nesciunt quam libero
+      doloribus eligendi eveniet nobis distinctio suscipit, nam tenetur corporis illum, accusamus quasi molestiae
+      quisquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut illo rem totam non dignissimos asperiores
+      fugiat consequatur dolor placeat odio deleniti nihil saepe possimus reiciendis assumenda, similique quia architecto
+      iusto?
+    </p>
+  </div>
+
+  <!-- <hr class="Divider"> -->
+
+  <div class="About-Personal Padding">
+    <div class="Column-One">
+      <div class="Info-Item">
+        <span class="Item-Title">{{ personalInformation.birthday.title }}:</span>
+        <span class="Item-Content">{{ personalInformation.birthday.content }} </span>
+      </div>
+      <div class="Info-Item">
+        <span class="Item-Title">{{ personalInformation.email.title }}:</span>
+        <span class="Item-Content">{{ personalInformation.email.content }}</span>
+      </div>
+      <div class="Info-Item">
+        <span class="Item-Title">{{ personalInformation.phone.title }}:</span>
+        <span class="Item-Content">{{ personalInformation.phone.content }}</span>
+      </div>
+    </div>
+    <div class="Column-Two">
+      <div class="Info-Item">
+        <span class="Item-Title">{{ personalInformation.nationality.title }}:</span>
+        <span class="Item-Content">{{ personalInformation.nationality.content }}</span>
+      </div>
+      <div class="Info-Item">
+        <span class="Item-Title">{{ personalInformation.study.title }}:</span>
+        <span class="Item-Content">{{ personalInformation.study.content }}</span>
+      </div>
+      <div class="Info-Item">
+        <span class="Item-Title">{{ personalInformation.freelance.title }}:</span>
+        <span class="Item-Content">{{ personalInformation.freelance.content }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- <hr class="Divider"> -->
+
+  <div class="About-Skills Padding">
+    <div class="Programing_Skills-Container">
+      <span class="Title">{{ programmingSkillsTitle }}</span>
+
+      <div class="Progress_Bar-Item" *ngFor="let skill of programmingSkills">
+        <div class="Item-Header">
+          <span>{{ skill.name }}</span>
+          <span>{{ skill.level }}%</span>
+        </div>
+        <div class="Progress_Bar-Container">
+
+          <progress [value]="skill.level" max="100" class="Progress_Bar-item"></progress>
+        </div>
+      </div>
+
+    </div>
+    <div class="Language_Skills-Container">
+      <!-- <span>Language Skills</span> -->
+      <span class="Title">{{ languageSkillsTitle }}</span>
+
+      <div class="Progress_Bar-Item" *ngFor="let skill of languageSkills;">
+        <div class="Item-Header">
+          <span>{{ skill.name }}</span>
+          <span>{{ skill.level }}%</span>
+        </div>
+        <div class="Progress_Bar-Container">
+          <progress [value]="skill.level" max="100" class="Progress_Bar-item"></progress>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="Knowledge-Container Padding">
+
+    <div class="Knowledge-List ">
+      <div class="List-Container">
+        <div class="Knowledge_Title-Container">
+          <span class="Title">{{ knowledgeAndInterests.knowledge.title }}</span>
+        </div>
+        <ul class="List">
+          <li>
+            Adobe
+          </li>
+          <li>
+            React
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="Interests-List ">
+      <div class="Knowledge_Title-Container">
+        <span class="Title">{{ knowledgeAndInterests.interests.title }}</span>
+      </div>
+      <ul class="List">
+        <li *ngFor="let interest of knowledgeAndInterests?.interests?.items">
+          {{ interest }}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>

@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;900&display=swap');
+
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+);
+
+@mixin media-up($breakpoint){
+  @if map-has-key($breakpoints, $breakpoint){
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content
+    }
+  }@else{
+    @warn "El valor '#{ $breakpoint }' no es un argumento valido."
+  }
+}
+
+::ng-deep * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

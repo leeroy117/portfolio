@@ -1,0 +1,76 @@
+{
+  "welcome": "Bienvenido a mi app",
+  "sidebar": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "service": "Servicio",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "home":{
+    "jobPosition": "Desarrollador Web Full Stack",
+    "description": "Soy un apasionado",
+    "hobbies": [
+      "desarrollador web full stack",
+      "fotografo",
+      "estudiante"
+    ]
+  },
+  "about":{
+    "position": "Desarrollador Web Full Stack",
+    "skills":{
+      "programmingTitle": "Habilidades de programación",
+      "languagesTitle": "Lenguajes"
+    },
+    "personalInformation":{
+
+      "birthday":{
+        "title": "Fecha de nacimiento",
+        "content": "04-11-1998"
+      },
+      "email":{
+        "title": "Correo electronico",
+        "content": "leeroy.uziel.gg@outlook.es"
+      },
+      "phone":{
+        "title": "Celular",
+        "content": "+52 871 251 07 48"
+      },
+      "nationality":{
+        "title": "Nacionalidad",
+        "content": "Mexicano"
+      },
+      "study":{
+        "title": "Estudios",
+        "content": "Ingeniero en Tecnologias de la Información "
+      },
+      "freelance":{
+        "title": "Freelance",
+        "content": "Disponible"
+      }
+
+    },
+    "knowledgeAndInterests":{
+      "knowledge":{
+        "title": "Conocimiento"
+      },
+      "interests": {
+        "title": "Interes",
+        "items": [
+          "Crear una aplicación movil",
+          "Optmización de sitios web",
+          "Aprender patrones de diseño",
+          "Desarollo personal",
+          "Mejorar mis habilidades en frontend",
+          "Aprender mas lenguajes de programación",
+          "Crear un blog personal",
+          "Enseñar personas a programar"
+        ]
+      }
+    }
+  },
+  "contact":{
+    "title": "Contacto",
+    "buttonText": "Enviar mensaje"
+  }
+}
