@@ -12,7 +12,7 @@ import { TranslateInterceptor } from './interceptors/translate.interceptor';
     ServerModule,
   ],
   providers:[
-    { provide: HTTP_INTERCEPTORS, useClass: TranslateInterceptor, multi: true }
+    // { provide: HTTP_INTERCEPTORS, useClass: TranslateInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 })

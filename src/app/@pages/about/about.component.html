@@ -1,10 +1,9 @@
 <div class="About-Container">
-  <div class="About-Header Padding">
+  <!-- <div class="About-Header Padding">
     <h1>Leeroy Uziel García González</h1>
     <h3 class="Title">{{ positionTitle }}</h3>
   </div>
 
-  <!-- <hr class="Divider"> -->
 
   <div class="About-Information Padding">
     <p>
@@ -22,8 +21,6 @@
       iusto?
     </p>
   </div>
-
-  <!-- <hr class="Divider"> -->
 
   <div class="About-Personal Padding">
     <div class="Column-One">
@@ -56,8 +53,6 @@
     </div>
   </div>
 
-  <!-- <hr class="Divider"> -->
-
   <div class="About-Skills Padding">
     <div class="Programing_Skills-Container">
       <span class="Title">{{ programmingSkillsTitle }}</span>
@@ -75,7 +70,6 @@
 
     </div>
     <div class="Language_Skills-Container">
-      <!-- <span>Language Skills</span> -->
       <span class="Title">{{ languageSkillsTitle }}</span>
 
       <div class="Progress_Bar-Item" *ngFor="let skill of languageSkills;">
@@ -99,7 +93,9 @@
         <div class="Knowledge_Title-Container">
           <span class="Title">{{ knowledgeAndInterests.knowledge.title }}</span>
         </div>
-        <ul class="List">
+        <ul
+          class="List"
+        >
           <li>
             Adobe
           </li>
@@ -114,13 +110,16 @@
       <div class="Knowledge_Title-Container">
         <span class="Title">{{ knowledgeAndInterests.interests.title }}</span>
       </div>
-      <ul class="List">
-        <li *ngFor="let interest of knowledgeAndInterests?.interests?.items">
+      <ul
+        class="List"
+        *ngIf="knowledgeAndInterests"
+      >
+        <li  *ngFor="let interest of knowledgeAndInterests.interests.items">
           {{ interest }}
         </li>
       </ul>
     </div>
 
-  </div>
+  </div> -->
 
 </div>
