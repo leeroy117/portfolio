@@ -1,0 +1,62 @@
+*
+  margin: 0
+  padding: 0
+
+
+.Sidebar
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    width: $sidebar-width
+    height: calc( 100vh - $header-height)
+    float: left
+    left: -$sidebar-width
+    transition: left 0.5s ease-in-out
+    background: $color-secondary
+    color: white
+    z-index: 999
+    &__Menu
+        display: flex
+        flex-direction: column
+        gap: 1rem
+        font-size: 1.5rem
+    &__Link
+        text-decoration: none !important
+        color: white
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        background-image: linear-gradient(to right,$color-accent,$color-accent 50%,#fff 50%)
+        background-size: 200% 100%
+        background-position: -100%
+        transition: all 0.3s ease-in-out
+        &:before
+            display:block
+            content:''
+            width:0
+            height:3px
+            bottom:5px
+            left:0
+            bottom:-3px
+            z-index:0
+            position:absolute
+            background: $color-accent
+            transition: all 0.3s ease-in-out
+        &:hover
+            background-position: 0%
+            &:before
+                width:100%
+
+#toggle
+  display: none
+  &:checked
+    ~ .Sidebar
+        left: 0
+
+.Content
+  background: $color-primary
+  // background: white
+  height: calc( 100vh - $header-height )
+  width: 100vw
+  border: none
+  color: white
