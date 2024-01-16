@@ -1,0 +1,13 @@
+.Heading
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 100%
+    &__Title
+        &::before
+            content: "<"
+            color: $color-accent
+        &::after
+            content: " />"
+            color: $color-accent

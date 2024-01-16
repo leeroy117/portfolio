@@ -4,17 +4,18 @@
 
 
 .Sidebar
-    position: absolute
+    position: fixed
     display: flex
     justify-content: center
     align-items: center
     width: $sidebar-width
-    height: calc( 100vh - $header-height)
+    min-height: calc( 100vh - $header-height)
     float: left
+    top: $header-height
     left: -$sidebar-width
     transition: left 0.5s ease-in-out
     background: $color-secondary
-    color: white
+    color: $color-text
     z-index: 999
     &__Menu
         display: flex
@@ -23,13 +24,26 @@
         font-size: 1.5rem
     &__Link
         text-decoration: none !important
-        color: white
+        color: $color-text
         -webkit-background-clip: text
         -webkit-text-fill-color: transparent
         background-image: linear-gradient(to right,$color-accent,$color-accent 50%,#fff 50%)
         background-size: 200% 100%
         background-position: -100%
         transition: all 0.3s ease-in-out
+        &--Active
+          text-decoration: none !important
+          color: $color-text
+          word-spacing: 10px
+          font-size: 1.7rem
+          font-weight: 500
+          transition: font-size 0.5s ease-in-out
+          &::before
+            content: '{'
+            color: $color-accent
+          &::after
+            content: '}'
+            color: $color-accent
         &:before
             display:block
             content:''
@@ -54,9 +68,10 @@
         left: 0
 
 .Content
+  position: absolute
+  top: $header-height
   background: $color-primary
-  // background: white
-  height: calc( 100vh - $header-height )
+  min-height: calc( 100vh - $header-height )
   width: 100vw
   border: none
   color: white
