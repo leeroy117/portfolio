@@ -6,7 +6,6 @@ export const Education = async () => {
 
     const response = await fetch('http://localhost:3000/api/education');
     const courses: Array<ICourse>= await response.json();
-    console.log("🚀 ~ Education ~ courses:", courses)
 
 
     return (
@@ -37,6 +36,7 @@ export const Education = async () => {
                         courses.map((course, index) => {
                             return (
                                         <Image 
+                                            key={index}
                                             className={styles.Education__Image}
                                             src={course.img} 
                                             alt={course.imgAlt}

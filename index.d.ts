@@ -21,3 +21,20 @@ interface ICourse{
     img: string,
     imgAlt: string
 }
+
+interface IProjectImage{
+    id: number,
+    url: string,
+    alt: string
+}
+
+interface IProject{
+    id: number;
+    name: string;
+    slug: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+    role: string;
+    images: Array<IProjectImage>
+}

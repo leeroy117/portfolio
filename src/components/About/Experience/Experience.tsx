@@ -8,13 +8,8 @@ export const Experience = async () => {
     const title = 'Experiencia';
     const closeBrace = ' />';
 
-    // fetch('http://localhost:3000')
-    //     .then((response) => response.json())
-    //     .then((data) => console.log('data',data))
-    
     const response = await fetch('http://localhost:3000/api/experience');
     const jobs: Array<IJob> = await response.json()
-    console.log("🚀 ~ Experience ~ skills:", jobs)
 
     return (
         <section className={styles.Experience}>
@@ -26,7 +21,7 @@ export const Experience = async () => {
                     jobs.map((job) => {
                         const skills = job.skills;
                         return (
-                            <div className={styles.Experience__Tab}>
+                            <div key={job.id} className={styles.Experience__Tab}>
                                 <input 
                                     className={styles.Experience__Input}
                                     type="checkbox" 
