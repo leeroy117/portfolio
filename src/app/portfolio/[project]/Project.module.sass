@@ -14,7 +14,11 @@
         font-size: 1.2rem
         font-weight: 700
     &__Description
-        // width: 100%
+        p
+            @include ta
+                font-size: 1.2rem
+            @include sl
+                font-size: 1.2rem
     &__Images
         display: flex
         flex-direction: column
@@ -25,22 +29,35 @@
         width: 100%
         height: auto
     &__Skills
-        // position: relative
         width: 100%
         border-top: 1px solid white
         display: flex
         flex-direction: column
         flex-wrap: wrap
         gap: .5rem
-        // padding: 1rem
     &__SkillsContainer
         display: flex
         flex-direction: row
         flex-wrap: wrap
         gap: .5rem
+        @include ta
+            font-size: 1.1rem
+        @include sl
+            font-size: 1.2rem
     &__Title
         display: flex
         justify-content: center
         align-items: center
         font-size: 1.2rem
         font-weight: 700
+        @include ta
+            span
+                font-size: 1.4rem 
+        @include sl
+            span
+                font-size: 1.4rem
+    &__Role
+        @include ta
+            font-size: 1.4rem
+        @include sl
+            font-size: 1.4rem

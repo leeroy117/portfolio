@@ -2,10 +2,6 @@ import { Heading } from '@/components/Shared/Heading';
 import styles from './Introduction.module.sass';
 
 export const Introduction = () => {
-    const brace = '<';
-    const title = 'Acerca';
-    const closeBrace = ' />';
-
     return(
         <section className={styles.Introduction}>
             <Heading title='Acerca'/>

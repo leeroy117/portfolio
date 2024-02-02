@@ -1,16 +1,51 @@
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import styles from './Project.module.sass';
 import { Heading } from "@/components/Shared/Heading";
 import Image from "next/image";
 import { Chip } from "@/components/Shared/Chip";
 
-export default async function Project({params}: Params) {
+interface IProps{
+    params: { project: string };
+    searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+async function getData(slug: string){
+    try {
+        const response = await fetch('http://127.0.0.1:3000/api/portfolio/projects/'+ slug,{
+            method: 'GET'
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const project: IProject = await response.json();
+        return project
+    } catch (error) {
+        console.log("🚀 ~ getData ~ error 1:", error)
+
+        const project: IProject = {
+            id: 0,
+            image: '',
+            imageAlt: '',
+            description: '',
+            name: '',
+            images: [],
+            role: '',
+            slug: '',
+            technologies: []
+        }
+
+        return project;
+    }
+}
+
+export default async function Project({
+    params,
+    searchParams,
+  }: IProps) {
     const slug = params.project;
-    const response = await fetch('http://localhost:3000/api/portfolio/projects/'+ slug);
-    const project: IProject = await response.json();
-    // console.log("🚀 ~ Project ~ response:", project)
+    
+    const project = await getData(slug);
+    console.log("🚀 ~ project:", project)
     const images: Array<IProjectImage> = project.images;
-    console.log("🚀 ~ Project ~ images:", images)
 
     return (
         <section className={styles.Project}>
@@ -28,13 +63,9 @@ export default async function Project({params}: Params) {
                     <span>Tecnologías</span>
                 </div>
                 <div className={styles.Project__SkillsContainer}>
-                    <Chip description="Angular"/>
-                    <Chip description="TypeScript"/>
-                    <Chip description="ExpressJS"/>
-                    <Chip description="NodeJS"/>
-                    <Chip description="MySql"/>
-                    <Chip description="Bootstrap"/>
-                    <Chip description="CSS"/>
+                    {
+                        project.technologies?.map((tech, index) => (<Chip key={index} description={tech}/>))
+                    }
                 </div>
             </div>
             <div className={styles.Project__Images}>
@@ -57,5 +88,5 @@ export default async function Project({params}: Params) {
                 }
             </div>
         </section>
-    )
+    );
 }

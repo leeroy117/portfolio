@@ -92,5 +92,5 @@ const courses: Array<ICourse> = [
 ]
 
 export async function GET(){
-    return Response.json( courses )
+    return Response.json(  courses  )
 }

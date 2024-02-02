@@ -11,22 +11,22 @@ export const Sidebar = () => {
     return ( 
 
         <aside className="Sidebar">
-            <CloseSidebar />
+            {/* <CloseSidebar /> */}
             {/* <nav className='Sidebar__Nav'> */}
-                <ul className="Sidebar__Menu">
+                <ul className="Sidebar__Menu animate__animated animate__backInLeft">
                     <li>
                         <Link className={`Sidebar__Link${pathname === '/' ? '--Active' : ''}`} href="/">
-                            Home
+                            Inicio
                         </Link>
                     </li>
                     <li>
                         <Link className={`Sidebar__Link${pathname === '/about' ? '--Active' : ''}`} href="/about">
-                            About
+                            Acerca de
                         </Link>
                     </li>
                     <li>
                         <Link className={`Sidebar__Link${regex.test(pathname) ? '--Active' : ''}`} href="/portfolio">
-                            Portfolio
+                            Portafolio
                         </Link>
                     </li>
                     {/* <Link className={`Sidebar__Link${pathname === '/portfolio' ? '--Active' : ''}`} href="/portfolio">
@@ -34,7 +34,7 @@ export const Sidebar = () => {
                     </Link> */}
                     <li>
                         <Link className={`Sidebar__Link${pathname === '/contact' ? '--Active' : ''}`} href="/contact">
-                            Contact
+                            Contacto
                         </Link>
 
                     </li>

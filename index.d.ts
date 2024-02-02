@@ -36,5 +36,17 @@ interface IProject{
     image: string;
     imageAlt: string;
     role: string;
-    images: Array<IProjectImage>
+    images: Array<IProjectImage>,
+    technologies: Array<string>
+}
+
+interface IError{
+    error: string;
+    path: string;
+}
+
+interface IResponse{
+    success: boolean;
+    error: Array<IError>,
+    status: number;
 }

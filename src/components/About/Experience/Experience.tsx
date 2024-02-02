@@ -2,15 +2,31 @@ import { Chip } from '@/components/Shared/Chip';
 import styles from './Experience.module.sass';
 import { Heading } from '@/components/Shared/Heading';
 
+async function getData(){
+    try {
+        const response = await fetch('http://127.0.0.1:3000/api/experience', {
+            method: 'GET'
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const jobs: Array<IJob> = await response.json()
+        return jobs;
+
+    } catch (error) {
+        console.log("🚀 ~ getData ~ error 3:", error)
+        return [];
+    }
+} 
+
 
 export const Experience = async () => {
-    const brace = '<';
-    const title = 'Experiencia';
-    const closeBrace = ' />';
-
-    const response = await fetch('http://localhost:3000/api/experience');
-    const jobs: Array<IJob> = await response.json()
-
+    // const response = await fetch('http://127.0.0.1:3000/api/experience', {
+    //     method: 'GET'
+    // });
+    // const jobs: Array<IJob> = await response.json()
+    const jobs = await getData();
     return (
         <section className={styles.Experience}>
 
@@ -47,10 +63,10 @@ export const Experience = async () => {
                                                 C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"/>
                                             </svg>
                                         </div>
-                                        <h4 className={styles.Experience__Position}>{job.position}</h4>
+                                        <h4 className={styles.Experience__Location}>{job.position}</h4>
                                     </div>
 
-                                    <p>
+                                    <p className={styles.Experience__Description}>
                                         {job.description}
                                     </p>
 

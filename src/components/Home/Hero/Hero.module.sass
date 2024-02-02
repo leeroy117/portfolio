@@ -3,26 +3,60 @@
     display: flex
     flex-direction: column
     justify-content: center
+    @include sl
+        padding: 1rem
+    @include ll
+        padding: 1rem
     .Hero__Heading
         display: flex
         flex-direction: row
+        font-size: 2rem
+        font-weight: 700
+        text-decoration: none
+        color: $color-text
+        @include sm
+            font-size: 2rem
+        @include mm
+            font-size: 2.2rem
+        @include lm
+            font-size: 3rem
+        @include ta
+            font-size: 3.5rem
+        @include sl
+            font-size: 4rem
+        @include ll
+            font-size: 4rem
         .Hero__Brace
             color: $color-accent
-            font-size: 3rem
     &__Info
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
         gap: 1rem
-    &__Name
-        font-size: 3rem
-        font-weight: 700
-    &__Position
-        font-size: 1.6rem
-        font-weight: 900
-        color: $color-accent
     &__Image
-        // filter: grayscale(100)
+        @include sm
+            width: 300px
+            height: 200px
+        @include mm
+            width: 350px
+            height: 234px
+        @include lm
+            width: 425px
+            height: 285px
+        @include ta
+            width: 600px
+            height: 402px
+        @include sl
+            width: 600px
+            height: 402px
+        @include ll
+            width: 600px
+            height: 402px
+    &__Link
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
 
         

@@ -17,33 +17,34 @@ const Projects: Array<IProject>= [
                 url: '/images/img_projects/elgirasol/2.png',
                 alt: 'Imagen de sistema'
             },
-            {
-                id: 3,
-                url: '/images/img_projects/elgirasol/3.png',
-                alt: 'Imagen de sistema'
-            },
-            {
-                id: 4,
-                url: '/images/img_projects/elgirasol/4.png',
-                alt: 'Imagen de sistema'
-            },
-            {
-                id: 5,
-                url: '/images/img_projects/elgirasol/5.png',
-                alt: 'Imagen de sistema'
-            },
+            // {
+            //     id: 3,
+            //     url: '/images/img_projects/elgirasol/3.png',
+            //     alt: 'Imagen de sistema'
+            // },
+            // {
+            //     id: 4,
+            //     url: '/images/img_projects/elgirasol/4.png',
+            //     alt: 'Imagen de sistema'
+            // },
+            // {
+            //     id: 5,
+            //     url: '/images/img_projects/elgirasol/5.png',
+            //     alt: 'Imagen de sistema'
+            // },
             {
                 id: 6,
                 url: '/images/img_projects/elgirasol/6.png',
                 alt: 'Imagen de sistema'
             },
-            {
-                id: 7,
-                url: '/images/img_projects/elgirasol/7.png',
-                alt: 'Imagen de sistema'
-            },
+            // {
+            //     id: 7,
+            //     url: '/images/img_projects/elgirasol/7.png',
+            //     alt: 'Imagen de sistema'
+            // },
         ],
-        role: 'Full Stack Web Developer'
+        role: 'Full Stack Web Developer',
+        technologies: ['Angular','Bootstrap','Express.js','Node.js','MySql']
     },
     {
         id: 1,
@@ -60,7 +61,8 @@ const Projects: Array<IProject>= [
             },
             
         ],
-        role: 'Full Stack Web Developer'
+        role: 'Full Stack Web Developer',
+        technologies: ['Angular','SaSS','Nest.js','Node.js','MySql','AWS',]
     },
 ]
 

@@ -12,9 +12,17 @@
         .Introduction__Brace
             color: $color-accent
     .Introduction__Paragraph
-    text-align: justify
-    text-justify: inter-word
-    font-size: 1rem
+        text-align: justify
+        text-justify: inter-word
+        font-size: 1rem
+        @include ta
+            font-size: 1.2rem
+        @include sl
+            padding: 1rem
+            font-size: 1.2rem
+        @include ll
+            padding: 1rem
+            font-size: 1.2rem
     .Introduction__Accent
         color: $color-accent
         font-weight: 900

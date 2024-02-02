@@ -26,14 +26,32 @@
         flex-direction: column
         height: 50px
         padding: .5rem .5rem 1rem .5rem
+        @include ta
+            padding: .8rem .8rem 1.5rem .8rem
+        @include sl
+            padding: .8rem .8rem 1.5rem .8rem
+        @include ll
+            padding: 1rem 1rem 2rem 1rem
     &__CardTitle
         position: relative
         left: 1rem
         font-size: 1.4rem
         font-weight: 900
+        @include ta
+            font-size:  1.6rem
+        @include sl
+            font-size:  1.6rem
+        @include ll
+            font-size:  1.7rem
     &__CardSubtitle
         position: relative
         left: 1rem
+        @include ta 
+            font-size: 1.2rem
+        @include sl 
+            font-size: 1.2rem
+        @include ll 
+            font-size: 1.2rem
     &__Link
         text-decoration: none
         color: white

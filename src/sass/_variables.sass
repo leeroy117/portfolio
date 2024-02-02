@@ -12,41 +12,92 @@ $color-background-experience: #740cdc
 
 $header-height: 70px
 $sidebar-width: 65%
+$sidebar-width-large: 40%
 
-$screen-sm-min: 576px
+$screen-mobil-s-min: 320px
+$screen-mobil-m-min: 375px
+$screen-mobil-l-min: 425px
+$screen-tablet-min: 768px
+$screen-laptop-min: 1024px
+$screen-laptop-l-min: 1440px
+$screen-largest-min: 2560px
+
+// $screen-sm-min: 576px
 
 // Small tablets (portrait view)
-$screen-md-min: 768px
+// $screen-md-min: 768px
 
 // Tablets and small desktops
-$screen-lg-min: 992px
+// $screen-lg-min: 992px
 
 // Large tablets and desktops
-$screen-xl-min: 1200px
+// $screen-xl-min: 1200px
 
 
-// Small devices
+// Mobil S
 @mixin sm 
-    @media (min-width: #{$screen-sm-min}) 
+    @media (min-width: #{$screen-mobil-s-min}) and (max-width: #{($screen-mobil-m-min - 1)})
         @content
 
-// Medium devices
-@mixin md 
-    @media (min-width: #{$screen-md-min}) 
+//Mobil M
+@mixin mm
+    @media (min-width: #{$screen-mobil-m-min}) and  (max-width: #{($screen-mobil-l-min - 1)})
         @content
 
-// Large devices
-@mixin lg 
-    @media (min-width: #{$screen-lg-min}) 
+//Mobil L
+@mixin lm
+    @media (min-width: #{($screen-mobil-l-min + 1)}) and (max-width: #{($screen-tablet-min - 1)})
         @content
 
-// Extra large devices
-@mixin xl 
-    @media (min-width: #{$screen-xl-min})
+//Tablet
+@mixin ta 
+    @media (min-width: #{$screen-tablet-min}) and (max-width: #{($screen-laptop-min - 1)})
         @content
-   
-// Custom devices
+
+//Laptop
+@mixin sl 
+    @media (min-width: #{$screen-laptop-min}) and (max-width: #{($screen-laptop-l-min - 1)})
+        @content
+
+//Laptop L
+@mixin ll 
+    @media (min-width: #{$screen-laptop-l-min}) and (max-width: #{($screen-largest-min - 1)})
+        @content
+
+//Largest
+@mixin ls 
+    @media (max-width: #{$screen-mobil-s-min}) 
+        @content
+
+
+Custom devices
 @mixin rwd($screen) 
     @media (min-width: $screen+'px') 
         @content
+
+
+
+// Small devices
+// @mixin sm 
+//     @media (min-width: #{$screen-sm-min}) 
+//         @content
+
+// Medium devices
+// @mixin md 
+//     @media (min-width: #{$screen-md-min}) 
+//         @content
+
+// Large devices
+// @mixin lg 
+//     @media (min-width: #{$screen-lg-min}) 
+//         @content
+
+// Extra large devices
+// @mixin xl 
+//     @media (min-width: #{$screen-xl-min})
+//         @content
    
+// Custom devices
+// @mixin rwd($screen) 
+//     @media (min-width: $screen+'px') 
+//         @content

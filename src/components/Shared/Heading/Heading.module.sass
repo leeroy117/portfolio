@@ -4,10 +4,18 @@
     justify-content: center
     align-items: center
     width: 100%
+    @include ta
+        font-size: 1.3rem
+    @include sl
+        font-size: 1.3rem
+    @include ll
+        font-size: 1.3rem
     &__Title
         &::before
             content: "<"
             color: $color-accent
+            font-size: 2rem
         &::after
             content: " />"
             color: $color-accent
+            font-size: 2rem

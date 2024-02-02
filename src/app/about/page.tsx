@@ -4,7 +4,7 @@ import { Education } from '@/components/About/Education';
 import { Tooling } from '@/components/About/Tooling';
 import { Experience } from '@/components/About/Experience';
 
-function About() {
+export default function About() {
     return (
         <main className={styles.About}>
             <Introduction />
@@ -14,5 +14,3 @@ function About() {
         </main>
     );
 }
-
-export default About;

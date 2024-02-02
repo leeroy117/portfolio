@@ -2,20 +2,9 @@ import { Heading } from '@/components/Shared/Heading';
 import styles from './Tooling.module.sass';
 
 export const Tooling = () => {
-    const brace = '<';
-    const title = 'Herramientas';
-    const closeBrace = '/>';
 
     return (
         <section className={styles.Tooling}> 
-            {/* <div className={styles.Tooling__Heading}>
-                <h2>
-                    <span className={styles.Tooling__Brace}>{brace}</span>
-                        {title}
-                    <span className={styles.Tooling__Brace}> {closeBrace}</span>
-                </h2>
-            </div> */}
-
             <Heading title='Herramientas'/>
             <div className={styles.Tooling__Container}>
 
