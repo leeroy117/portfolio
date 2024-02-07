@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const path = require('path')
+const createNextIntlPlugin = require('next-intl/plugin');
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
     sassOptions: {
@@ -8,4 +10,5 @@ const nextConfig = {
       },
 }
 
-module.exports = nextConfig
+// module.exports = nextConfig
+module.exports =  withNextIntl(nextConfig);

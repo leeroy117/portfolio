@@ -1,0 +1,52 @@
+{
+    "Sidebar": {
+        "home": "Inicio",
+        "about": "Acerca",
+        "portfolio": "Portafolio",
+        "contact": "Contacto"
+    },
+    "Home":{
+        "coffee": {
+            "title": "Amante del café"
+        },
+        "developer": {
+            "title": "Desarrollador Full Stack Web Developer"
+        },
+        "photographer": {
+            "title": "Fotografo"
+        }
+    },
+    "About":{
+        "Introduction": {
+            "Title": "Introducción",
+            "Content": "<b>¡Hola!</b> Soy Leeroy García, un apasionado <b> desarrollador web full stack</b> con <b> tres años de experiencia </b> en la creación de soluciones digitales robustas y eficientes. Mi enfoque se centra en construir aplicaciones web que no solo sean funcionales, sino también atractivas y fáciles de usar. A lo largo de mi carrera, he tenido el privilegio de trabajar en diversos proyectos, desde plataformas educativas hasta sistemas de gestión interna. Estoy comprometido con el aprendizaje continuo y la adopción de las últimas tecnologías para ofrecer productos de alta calidad. ¡Estoy emocionado de seguir contribuyendo al mundo del desarrollo web y enfrentar nuevos desafíos emocionantes!"
+        },
+        "Tooling": {
+            "Title":"Herramientas"
+        },
+        "Experience": {
+            "Title": "Experiencia"
+        },
+        "Education": {
+            "Title": "Educación",
+            "Courses": {
+                "Title": "Cursos"
+            }
+        }
+    },
+    "Contact": {
+        "Title": "Contacto",
+        "Form": {
+            "Name": "Juan García",
+            "Email": "ejemplo@gmail.com",
+            "Message": "Hola! me gustaria platicar contigo...",
+            "button": "Enviar"
+        }
+    },
+    "Project":{
+        "subtitle": "Tecnologías"
+    },
+    "Projects": {
+        "title": "Proyectos"
+    }
+}

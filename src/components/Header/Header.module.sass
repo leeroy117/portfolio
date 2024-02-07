@@ -17,3 +17,21 @@
             display: none
         @include ll
             display: none
+    &__Lang
+        font-size: 1.25rem
+        color: $color-text
+        position: absolute
+        // left: $sidebar-width-large
+        right: 0
+        // left: 50%
+        @include sl
+            position: relative
+            left: $sidebar-width-large
+        @include ll
+            left: $sidebar-width-large
+        select
+            background: $color-secondary
+            font-size: 1.1rem
+            color: $color-text
+            border: none
+

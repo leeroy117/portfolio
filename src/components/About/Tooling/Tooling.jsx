@@ -1,12 +1,16 @@
 import { Heading } from '@/components/Shared/Heading';
 import styles from './Tooling.module.sass';
+import { useTranslations } from 'next-intl';
 
 export const Tooling = () => {
 
+    const t = useTranslations('About.Tooling');
+    const title = t('Title');
+
     return (
         <section className={styles.Tooling}> 
-            <Heading title='Herramientas'/>
-            <div className={styles.Tooling__Container}>
+            <Heading title={title} />
+            <div className={`${styles.Tooling__Container} animate__animated  animate__bounceInUp`}>
 
                 <div className={styles.Tooling__Tool}>
                     {/* <div className={styles.Tooling__Icon}> */}

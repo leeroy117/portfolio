@@ -1,12 +1,19 @@
 import Image from 'next/image';
 import { Heading } from '@/components/Shared/Heading';
 import styles from './Projects.module.sass';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { useLocale } from 'next-intl';
+import { Link } from '@/navigation';
+import { getTranslations } from 'next-intl/server';
 
-async function getData(){
+async function getData(lang: string){
     try {
         const response  = await fetch('http://127.0.0.1:3000/api/portfolio/projects',{
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                'accept-language': lang
+            },
+            cache: 'no-store'
         });
         
         if (!response.ok) {
@@ -22,12 +29,16 @@ async function getData(){
 
 export const Projects = async () => {
 
-    const projects = await getData();
+    const t = await getTranslations('Projects');
+
+    const locale = useLocale();
+
+    const projects = await getData(locale);
     
     return (
         <section className={styles.Projects}>
-            <Heading title='Proyectos'/>
-            <div className={styles.Projects__Container}>
+            <Heading title={t('title')} />
+            <div className={`${styles.Projects__Container} animate__animated animate__fadeInRight`}>
                 {
                     projects.map((project, index) => {
                         const url = `/portfolio/${project.slug}`;

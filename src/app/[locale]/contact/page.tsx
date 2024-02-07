@@ -1,11 +1,14 @@
 "use client"
 import { Heading } from '@/components/Shared/Heading';
 import styles from './Contact.module.sass';
-import { sendEmail } from '../actions';
+import { sendEmail } from '../../actions';
 import { FormEvent, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import { useLocale, useTranslations } from 'next-intl';
+import { useSelectedLayoutSegment } from 'next/navigation';
 
 export default function Contact(){
+    const locale = useLocale();
 
     const [errorResponse, setErrorResponse] = useState<IResponse>({
         success: true,
@@ -14,7 +17,18 @@ export default function Contact(){
     });
     useEffect(()=>{
 
-    },[errorResponse])
+        
+
+    },[errorResponse]);
+
+    const t = useTranslations('Contact');
+    const title = t('Title');
+
+    // const formTranslation = t('Form');
+    const name = t('Form.Name');
+    const email = t('Form.Email');
+    const message = t('Form.Message');
+    const textButton = t('Form.button');
     
 
     const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -30,7 +44,7 @@ export default function Contact(){
             color:"#fff",
         });
         const formData = new FormData(event.currentTarget);
-        const response  = await sendEmail(formData);
+        const response  = await sendEmail(formData, locale);
         console.log("🚀 ~ onSubmit ~ response:", response);
         
         setErrorResponse({
@@ -95,22 +109,22 @@ export default function Contact(){
 
     return (
         <main className={styles.Contact }>
-            <Heading title='Contacto'/>
+            <Heading title={title}/>
             <div className={styles.Contact__FormContainer}>
                 <form 
                     onSubmit={onSubmit}
-                    className={styles.Contact__Form}
+                    className={`${styles.Contact__Form} animate__animated animate__bounceInLeft`}
                 >
                     <input 
                         type="text" 
-                        placeholder='Jhon Due'
+                        placeholder={name}
                         name='name'
                         className={styles.Contact__Input}
                     />
 
                     <input 
                         type="email" 
-                        placeholder='example@gmail.com' 
+                        placeholder={email}
                         name='email'
                         className={styles.Contact__Input}
                     />
@@ -118,7 +132,7 @@ export default function Contact(){
                         cols={30} 
                         rows={10}
                         name='message'
-                        placeholder='Me gustaria platicar contigo.'
+                        placeholder={message}
                         className={styles.Contact__TextArea}
                     >
                         
@@ -143,10 +157,10 @@ export default function Contact(){
                     
 
                     <button 
-                        className={styles.Contact__Button}
+                        className={`${styles.Contact__Button} animate__animated animate__bounceInUp animate__delay-1s`}
                         type="submit"
                     >
-                        Enviar
+                        {textButton}
                     </button>
                 </form>
             </div>

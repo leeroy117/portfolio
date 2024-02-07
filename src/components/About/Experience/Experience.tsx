@@ -1,11 +1,16 @@
 import { Chip } from '@/components/Shared/Chip';
 import styles from './Experience.module.sass';
 import { Heading } from '@/components/Shared/Heading';
+import { getTranslations } from 'next-intl/server';
+import { useLocale } from 'next-intl';
 
-async function getData(){
+async function getData(lang: string){
     try {
         const response = await fetch('http://127.0.0.1:3000/api/experience', {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                'accept-language': lang 
+            }
         });
 
         if (!response.ok) {
@@ -22,17 +27,18 @@ async function getData(){
 
 
 export const Experience = async () => {
-    // const response = await fetch('http://127.0.0.1:3000/api/experience', {
-    //     method: 'GET'
-    // });
-    // const jobs: Array<IJob> = await response.json()
-    const jobs = await getData();
+    const locale = useLocale();
+    const jobs = await getData(locale);
+
+    const t = await getTranslations('About.Experience');
+    const title = t('Title');
+
     return (
         <section className={styles.Experience}>
 
-            <Heading title='Experiencia'/>
+            <Heading title={title} />
 
-            <div className={styles.Experience__Tabs}>
+            <div className={`${styles.Experience__Tabs} animate__animated animate__fadeInRight`}>
                 {
                     jobs.map((job) => {
                         const skills = job.skills;

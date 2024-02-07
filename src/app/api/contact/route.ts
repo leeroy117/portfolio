@@ -13,24 +13,33 @@ const transporter  = nodemailer.createTransport({
 })
 
 // const emailSchema = z.string().email();
-const contactSchema = z.object({
-    email: z.string().email({
-        message: 'El correo electronico no es valido.'
-    }),
-    name: z.string().refine((value) => /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s']+$/.test(value),{
-        message: 'El nombre no es valido.'
-    }),
-    message: z.string().min(5,{
-        message:'El mensaje no es valido.'
-    }) 
-});
+
+const contactSchemaFunction = (lang: string) => {
+
+    return z.object({
+        email: z.string().email({
+            message: `${lang === 'en' ? 'Email invalid' : 'El correo electronico no es valido.'}`
+            // message: 'El correo electronico no es valido.'
+        }),
+        name: z.string().refine((value) => /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s']+$/.test(value),{
+            message: `${lang === 'en' ? 'Name is invalid' : 'El nombre no es valido.'}`
+        }),
+        message: z.string().min(5,{
+            message: `${lang === 'en' ? 'Message is invalid' : 'El mensaje no es valido.'}` 
+        }) 
+    });
+
+}
 
 
 export async function POST(request: Request){
+    console.log('request header lang', request.headers.get('accept-language'));
+
+    const lang = request.headers.get('accept-language') || 'es';
 
     const formData  = await request.formData();
 
-    const result = contactSchema.safeParse({
+    const result = contactSchemaFunction(lang).safeParse({
         email : formData.get('email'),
         message: formData.get('message'),
         name: formData.get('name')
@@ -63,7 +72,6 @@ export async function POST(request: Request){
 
     try {
         
-
         const info = await transporter.sendMail({
             from: "leeroy.uziel.gg@outlook.es", // sender address
             to: "sukaritas19@gmail.com", // list of receivers

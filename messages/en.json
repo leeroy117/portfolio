@@ -1,0 +1,52 @@
+{
+    "Sidebar": {
+        "home": "Home",
+        "about": "About",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "Home":{
+        "coffee": {
+            "title": "Coffee lover"
+        },
+        "developer": {
+            "title": "Full Stack Web Developer"
+        },
+        "photographer": {
+            "title": "Photographer"
+        }
+    },
+    "About":{
+        "Introduction": {
+            "Title": "Introduction",
+            "Content": "<b>Hello!</b> I am Leeroy García, a passionate <b> full stack web developer</b> with <b> three years of experience </b> in creating robust and efficient digital solutions. My focus is on building web applications that are not only functional, but also attractive and easy to use. Throughout my career, I have had the privilege of working on various projects, from educational platforms to internal management systems. I am committed to continuous learning and adopting the latest technologies to deliver high quality products. I'm excited to continue contributing to the world of web development and take on exciting new challenges!"
+        },
+        "Tooling": {
+            "Title":"Tooling"
+        },
+        "Experience": {
+            "Title": "Experience"
+        },
+        "Education": {
+            "Title": "Education",
+            "Courses": {
+                "Title": "Courses"
+            }
+        }
+    },
+    "Contact": {
+        "Title": "Contact",
+        "Form": {
+            "Name": "Jhon Doe",
+            "Email": "example@gmail.com",
+            "Message": "Hello! I would like to reach out to you...",
+            "button": "Send"
+        }
+    },
+    "Project":{
+        "subtitle": "Technologies"
+    },
+    "Projects": {
+        "title": "Projects"
+    }
+}

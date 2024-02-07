@@ -1,7 +1,20 @@
+"use client"
+import { useLocale } from 'next-intl';
+// import {useRouter} from 'next/navigation';
+// import Link from 'next/link';
 import styles from './Header.module.sass';
-
+import { Link, usePathname, useRouter } from '@/navigation';
+import { FormEvent } from 'react';
 
 export const Header = () => {
+    const pathname = usePathname(); // initialize pathname in the global state
+    const router = useRouter();
+    const locale = useLocale();
+
+    const onChangeHandle = (event: FormEvent<HTMLSelectElement>) => {
+        const lang = event.currentTarget.value;
+        router.replace(pathname, {locale: lang});
+    }
 
     return (
         <>
@@ -23,7 +36,18 @@ export const Header = () => {
                         </g>
                         </g>
                     </svg>
+
                 </label>
+
+                <label
+                    className={styles.Header__Lang}
+                >
+                    <select onChange={onChangeHandle}>
+                        <option value="es" key="0" selected={locale ==  'es' ? true : false}>Es-Español</option>
+                        <option value="en" key="1" selected={locale ==  'en' ? true : false}>En-English</option>
+                    </select>
+                </label>
+                    
             </header>
         </>
     ); 

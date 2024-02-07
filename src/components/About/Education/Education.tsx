@@ -1,6 +1,8 @@
 import { Heading } from '@/components/Shared/Heading';
 import styles from './Education.module.sass';
 import  Image  from 'next/image';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 async function getData(){
     try {
@@ -21,7 +23,6 @@ async function getData(){
 
     } catch (error) {
         console.log("🚀 ~ getData ~ error 2:", error)
-        
         return [];
     }
 }
@@ -29,22 +30,23 @@ async function getData(){
 
 export const Education = async () => {
 
-    // const response = await fetch('http://127.0.0.1:3000/api/education',{
-    //     method: 'GET'
-    // });
-    // const courses: Array<ICourse>= await response.json();
+    
     const courses: Array<ICourse>= await getData();
+    
+    const t = await getTranslations('About.Education');
+    const title = t('Title');
+    const coursesTitle = t('Courses.Title');
 
     return (
         <section className={styles.Education}>
             
-            <Heading title='Educación' />
+            <Heading title={title} />
             <div className={styles.Education__Info}>
                
 
                 <div className={styles.Education__Courses}>
                     <div className={styles.Education__SubtitleContainer}>
-                        <h4 className={styles.Education__Subtitle}>Cursos</h4>
+                        <h4 className={styles.Education__Subtitle}>{coursesTitle}</h4>
                     </div>
                     <div className={styles.Education__CoursesContainer}>
                     {
