@@ -4,6 +4,7 @@ import { Social } from '../Social';
 import styles from './Hero.module.sass';
 import Image  from 'next/image';
 import  Link  from 'next/link';
+import { CV } from '@/components/CV/CV';
 
 
 export const Hero = () => {
@@ -35,6 +36,7 @@ export const Hero = () => {
                     <span className={`${styles.Hero__Brace} animate__animated animate__backInLeft`}>{closeBrace}</span>
                 </Link>
                 <Position />
+                <CV />
                 <Social />
             </section>
 

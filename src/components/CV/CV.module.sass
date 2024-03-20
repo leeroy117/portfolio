@@ -1,0 +1,15 @@
+.Link
+    text-decoration: none
+    color: $color-text
+    font-size: 1.2rem
+    font-weight: 700
+    &::before
+        content: "{"
+        color: $color-accent
+    &::after
+        content: "}"
+        color: $color-accent
+    &:hover
+        color: $color-chip
+        font-size: 1.3rem
+        transition: font-size ease-in-out 0.5s

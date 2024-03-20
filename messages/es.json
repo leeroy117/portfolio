@@ -13,7 +13,11 @@
             "title": "Desarrollador Full Stack Web Developer"
         },
         "photographer": {
-            "title": "Fotografo"
+            "title": "Aficionado a la fotografía"
+        },
+        "cv": {
+            "button":"Descargar CV",
+            "filename": "leeroy_garcia_fullStackWebDev_es.pdf"
         }
     },
     "About":{

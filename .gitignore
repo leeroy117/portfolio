@@ -38,3 +38,4 @@ next-env.d.ts
 *.extension
 *.zip
 *.sql
+*.tar
