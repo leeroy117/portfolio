@@ -6,20 +6,21 @@ pipeline {
     }
 
     stages {
-        stage('Checkout!') {
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/leeroy117/portfolio.git'
             }
         }
-        stage('Construir imagen Docker!') {
+        stage('Construir imagen Docker') {
             steps {
                 script {
                     // Construir la imagen Docker
-                    sh 'docker build -t portfolio:${DOCKER_IMAGE_TAG} .'
+                    // sh 'docker build -t portfolio:${DOCKER_IMAGE_TAG} .'
+                    docker.build("portfolio:${DOCKER_IMAGE_TAG}")
                 }
             }
         }
-        stage('Desplegar!') {
+        stage('Desplegar') {
             steps {
                 script {
                     // Detener y eliminar contenedores antiguos si existen
