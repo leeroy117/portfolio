@@ -42,7 +42,7 @@ export const Header = () => {
                 <label
                     className={styles.Header__Lang}
                 >
-                    <select onChange={onChangeHandle}>
+                    <select onChange={onChangeHandle} defaultValue={0}>
                         <option value="es" key="0" selected={locale ==  'es' ? true : false}>Es-Español</option>
                         <option value="en" key="1" selected={locale ==  'en' ? true : false}>En-English</option>
                     </select>
